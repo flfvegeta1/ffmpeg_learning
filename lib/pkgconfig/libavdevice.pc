@@ -1,0 +1,14 @@
+prefix=/home/flf/engine_ffmpeg/local
+exec_prefix=${prefix}
+libdir=/home/flf/engine_ffmpeg/local/lib
+includedir=/home/flf/engine_ffmpeg/local/include
+
+Name: libavdevice
+Description: FFmpeg device handling library
+Version: 58.10.100
+Requires: 
+Requires.private: libavfilter >= 7.85.100, libswscale >= 5.7.100, libpostproc >= 55.7.100, libavformat >= 58.45.100, libavcodec >= 58.91.100, libswresample >= 3.7.100, libavutil >= 56.51.100
+Conflicts:
+Libs: -L${libdir}  -lavdevice 
+Libs.private: -lm -lasound -lm -ldl -lpthread -lrt -L/usr/local/lib -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -lSDL2 -Wl,--no-undefined -lm -ldl -lpthread -lrt
+Cflags: -I${includedir}

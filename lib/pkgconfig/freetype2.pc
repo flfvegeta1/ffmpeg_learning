@@ -1,0 +1,14 @@
+prefix=/home/flf/engine_ffmpeg/freetype2/../local
+exec_prefix=/home/flf/engine_ffmpeg/freetype2/../local
+libdir=/home/flf/engine_ffmpeg/freetype2/../local/lib
+includedir=/home/flf/engine_ffmpeg/freetype2/../local/include
+
+Name: FreeType 2
+URL: https://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 22.1.16
+Requires:
+Requires.private: zlib, libpng, harfbuzz >= 1.3.0
+Libs: -L${libdir} -lfreetype
+Libs.private: 
+Cflags: -I${includedir}/freetype2
