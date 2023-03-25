@@ -55,6 +55,13 @@ static int open_input(const char *url) {
         return ret;
     }
 
+    if ((ret = avcodec_open2(dec_ctx, codec, NULL)) < 0) {
+        printf("open decoder failed\n");
+        return ret;
+    }
+
+    printf("open decoder %s success\n", codec->long_name);
+
     printf("--------------------------------------Input-------------------------------------\n");
     av_dump_format(ifmt_ctx, 0, url, 0);
     return 0;
