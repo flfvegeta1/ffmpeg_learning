@@ -8,7 +8,7 @@ FFMPEG_INCLUDE=$(MAKE_DIR)/include
 
 FFMPEG_LIB=$(MAKE_DIR)/lib
 
-CFLAGS = -g -Wall -I $(FFMPEG_INCLUDE) -L $(FFMPEG_LIB) -lavformat -lavfilter -lavcodec -lavutil -lpthread
+CFLAGS = -g -Wall -I $(FFMPEG_INCLUDE) -L $(FFMPEG_LIB) -lavformat -lavfilter -lavcodec -lavutil -lpthread -luuid
 
 CC=gcc
 
@@ -18,7 +18,7 @@ BIN=$(OUTPUT_DIR)$(SRC:$(SRC_DIR)%.c=%)
 all: ${BIN}
 
 ${BIN}:$(SRC)
-	${CC} ${CFLAGS} $^ -o $@
+	${CC} $^ ${CFLAGS} -o $@
 
 clean:
 	rm -rf ${BIN}
